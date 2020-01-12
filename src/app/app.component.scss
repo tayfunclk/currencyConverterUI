@@ -1,0 +1,77 @@
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.centerHeader {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  margin-top: 10%;
+}
+input[type="submit" i]:disabled {
+  background: #9a9797;
+}
+@media only screen and (min-width: 960px) {
+  /* styles for browsers larger than 960px; */
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+  
+}
+@media only screen and (min-width: 1440px) {
+  /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (max-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+  .center {
+    margin: auto;
+    width: 100%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+}

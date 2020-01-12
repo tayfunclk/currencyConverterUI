@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+
+
+<div class="center">
+  <h3 class="centerHeader">Select your source currency and submit </h3>
+
+  <form action="/action_page.php">
+    <label for="Amount">Amount</label>
+    <input type="number" id="Amount" name="Amount" placeholder="Amount" (ngModelChange)="modelChanged($event)"
+      [(ngModel)]="amount" pattern="/^[0-9]+$/">
+
+    <label for="sourceCurrency">Source</label>
+    <select id="sourceCurrency" name="sourceCurrency" (change)="parseSource($event.target.value)">
+      <option value="0">--select source currency--</option>
+      <option *ngFor="let curr of currencyList" [value]="curr">
+        {{curr}}
+      </option>
+    </select>
+
+    <label for="targetCurrency">Target</label>
+    <select id="targetCurrency" name="targetCurrency" (change)="parseTarget($event.target.value)">
+      <option value="0">--select target currency--</option>
+      <option *ngFor="let curr of currencyList" [value]="curr">
+        {{curr}}
+      </option>
+    </select>
+
+
+    <input type="submit" value="Submit" [disabled]="!enableSubmit" (click)="calculateExchange()">
+
+    <h3>Exchanged Value </h3>
+    <div *ngIf="this.exchanged">
+     
+        {{this.formattedAmout}} = {{this.formattedExchanged}}  
+    </div>
+
+
+  </form>
+</div>
